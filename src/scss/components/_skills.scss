@@ -31,10 +31,21 @@
     margin-bottom: 32px;
   }
 
+  &__title {
+    padding: 0 8px;
+  }
+
+  &__text {
+    font-weight: normal;
+    padding: 4px 8px;
+  }
+
+  // TODO: Make this animate when scrolled into view
   &__display {
     @for $i from 1 through $max-score {
       &[score="#{$i}"] {
         align-items: center;
+        animation: skillDisplayAnimation-#{$i} 1s;
         background-color: $white;
         display: flex;
         height: 24px;
@@ -47,6 +58,16 @@
           font-size: 0.9em;
           font-weight: normal;
           margin-left: 105%;
+        }
+
+        @keyframes skillDisplayAnimation-#{$i} {
+          from {
+            width: 0px;
+          }
+
+          to {
+            width: $max-width * $i;
+          }
         }
       }
     }
