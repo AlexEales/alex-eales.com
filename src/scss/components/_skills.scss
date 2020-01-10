@@ -1,0 +1,39 @@
+.skills {
+  list-style: none;
+}
+
+.skill {
+  $score-map: (
+    1: "Learning",
+    2: "Competent",
+    3: "Proficient",
+    4: "Experienced",
+    5: "Mastered"
+  );
+  $max-score: 5;
+  $max-width: 75% / $max-score;
+
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  margin-top: 32px;
+  width: 100%;
+
+  &__display {
+    @for $i from 1 through $max-score {
+      &[score="#{$i}"] {
+        align-items: center;
+        background-color: $white;
+        display: flex;
+        height: 24px;
+        margin-top: 16px;
+        width: $max-width * $i;
+
+        &::after {
+          content: map-get($map: $score-map, $key: $i);
+          margin-left: 102%;
+        }
+      }
+    }
+  }
+}
