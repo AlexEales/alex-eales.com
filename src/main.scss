@@ -1,0 +1,14 @@
+@import "./scss/colours";
+@import "./scss/type";
+
+@import "./scss/components/hero";
+
+html,
+body {
+  background-color: $black;
+  color: $white;
+}
+
+section {
+  margin: 8px;
+}

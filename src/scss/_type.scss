@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,700|IBM+Plex+Sans:400,700&display=swap');
+
+$mono-font-stack: 'IBM Plex Mono', monospace;
+$sans-font-stack: 'IBM Plex Sans', sans-serif;
+
+$base-font-size: 18px;
+
+html,
+body {
+  font-family: $mono-font-stack;
+  font-size: $base-font-size;
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+  padding-left: 16px;
+}
+
+h1 {
+  border-left: 16px solid $white;
+  font-size: 4em;
+  margin: 0 16px;
+
+  @media (min-width: 700px) {
+    border: none;
+    font-size: 5em;
+    margin: 0;
+
+    &::before {
+      animation: h1BeforeAnimation 1s;
+      background: $white;
+      content: "";
+      display: inline-block;
+      height: 122px;
+      margin-right: 32px;
+      transform: translateY(24px);
+      width: 16px;
+    }
+
+    @keyframes h1BeforeAnimation {
+      from {
+        height: 0px;
+      }
+      
+      to {
+        height: 122px;
+      }
+    }
+  }
+}
+
+h2 {
+  font-size: 3em;
+  margin-bottom: 0;
+  margin-top: 0;
+  
+  &::before {
+    content: "> ";
+  }
+}
+
+h3 {
+  color: #888;
+  font-size: 2em;
+  font-weight: bold;
+  
+  &::before {
+    content: "# ";  
+  }
+}
+
+p {
+  margin: 0;
+  padding: 16px 32px;
+}
+
+.subtitle {
+  color: #888;
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0 32px;
+  
+  @media (max-width: 700px) {
+    font-size: 1.5em;
+  }
+}
