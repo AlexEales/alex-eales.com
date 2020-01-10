@@ -1,5 +1,13 @@
 .skills {
+  border: 2px dashed $grey;
   list-style: none;
+  margin: 8px;
+  padding: 8px;
+  width: 90%;
+
+  @media (min-width: 700px) {
+    width: 40%;
+  }
 }
 
 .skill {
@@ -11,13 +19,17 @@
     5: "Mastered"
   );
   $max-score: 5;
-  $max-width: 75% / $max-score;
+  $max-width: 80% / $max-score;
 
   display: flex;
   flex-direction: column;
   font-weight: bold;
   margin-top: 32px;
   width: 100%;
+
+  &:last-of-type {
+    margin-bottom: 32px;
+  }
 
   &__display {
     @for $i from 1 through $max-score {
@@ -30,8 +42,11 @@
         width: $max-width * $i;
 
         &::after {
+          color: $white;
           content: map-get($map: $score-map, $key: $i);
-          margin-left: 102%;
+          font-size: 0.9em;
+          font-weight: normal;
+          margin-left: 105%;
         }
       }
     }

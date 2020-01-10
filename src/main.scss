@@ -13,3 +13,16 @@ body {
 section {
   margin: 8px;
 }
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @media (min-width: 700px) {
+    align-items: unset;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
