@@ -42,6 +42,10 @@
   &__text {
     font-weight: normal;
     padding: 4px 8px;
+
+    &:last-of-type {
+      margin-bottom: 16px;
+    }
   }
 
   // TODO: Make this animate when scrolled into view
