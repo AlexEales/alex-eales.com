@@ -1,12 +1,6 @@
 ---
-import Navbar from "../components/navbar.astro";
+import Landing from "../components/Landing.svelte";
+import Navbar from "../components/Navbar.astro";
 ---
 <Navbar />
-<div class="flex flex-col items-center justify-center h-screen">
-	<h1 class="font-black text-9xl text-fill-">
-		Alex Eales
-	</h1>
-	<p class="text-xl">
-		New website coming soon...
-	</p>
-</div>
+<Landing client:load />
